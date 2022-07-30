@@ -1,0 +1,23 @@
+// firestore()
+//   .collection('sample_test')
+//   .doc('ABC')
+//   .set({
+//     name: 'Aditya',
+//     age: '20',
+//   })
+//   .then(() => {
+//     console.log('User added!');
+//   });
+// console.log('p1');
+// correct
+// const usersCollection = firestore()
+//   .collection('sample_test')
+//   .get()
+//   .then(querySnapshot => {
+//     console.log('Total users: ', querySnapshot.size);
+
+//     querySnapshot.forEach(documentSnapshot => {
+//       console.log('User ID: ', documentSnapshot.id, documentSnapshot.data());
+//     });
+//   });
+// console.log(usersCollection);

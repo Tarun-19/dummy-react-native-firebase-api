@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "982568787762",
+    "project_id": "teesta-4c798",
+    "storage_bucket": "teesta-4c798.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:982568787762:android:190abe12dd48bda29f812b",
+        "android_client_info": {
+          "package_name": "com.buttontest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "982568787762-53gfattd3v5altepbjod7skq74p2go20.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3tGiR_cFiaMMhKGkqFJYrKhSzAz8lRyY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "982568787762-53gfattd3v5altepbjod7skq74p2go20.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "982568787762-mg1gonkj3iaj6n6g27g96kc4ihimsonj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "teesta"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:982568787762:android:70884705a11fe92f9f812b",
+        "android_client_info": {
+          "package_name": "com.teesta.teesta_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "982568787762-53gfattd3v5altepbjod7skq74p2go20.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3tGiR_cFiaMMhKGkqFJYrKhSzAz8lRyY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "982568787762-53gfattd3v5altepbjod7skq74p2go20.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "982568787762-mg1gonkj3iaj6n6g27g96kc4ihimsonj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "teesta"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

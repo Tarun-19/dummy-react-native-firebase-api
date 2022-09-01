@@ -63,9 +63,9 @@ function getFormData(object) {
 const justDoIt=async()=>{
   await firestore()
   .collection('trip')
-  .doc('FtIkdCJxKH5IXo4Gk3XW')
+  .doc('3EdxW6UrrR7VxAGzDsMo')
   .onSnapshot(documentSnapshot => {
-    console.log('Mysore data: ', documentSnapshot.data());
+    console.log('1st trip data: ', documentSnapshot.data());
   });
   console.log("done");
  }

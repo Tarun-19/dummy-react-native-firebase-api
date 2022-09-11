@@ -11,68 +11,90 @@ import firestore from '@react-native-firebase/firestore';
 import SearchingPage from './searchingPage';
 import axios from 'axios';
 
-// const userDoc = firestore().collection('trip').doc('cS0CUHz82jKWFnX0T723');
-// console.log(userDoc);
+const App = () =>{
+  let flag=0;
+
+  const [tripsState, settripsState] = useState([]);
+  const [cards, setcards] = useState([]);
+useEffect(() => {
+  const tryMe = async () =>{
+    let allTrips = [];
+    await firestore()
+    .collection("trip")
+    .onSnapshot((querySnapshot) => {
+      const trips = [];
+
+      querySnapshot.forEach((documentSnapshot) => {
+        trips.push({
+          ...documentSnapshot.data(),
+          docId: documentSnapshot.id,
+        });
+      });
+      settripsState ? settripsState (trips) : null;
+      allTrips = trips;
+    });
+  }
+  tryMe();
+}, []);
+
+useEffect(() => {
+  console.log("trips altered");
+  if(tripsState.length)
+  {
+    console.log("updated");
+    let arr=[];
+    tripsState.map((trip)=>{
+      trip.itinerary.map((x)=>{
+        // console.log(x);
+        for(const property in x)
+        {
+          // console.log(x[property]);
+          arr.push(x[property]);
+        }
+        // console.log(x[0]);
+      });
+    });
+    setcards(arr);
+    console.log("processed",arr.length);
+  }
+  // console.log(tripsState);
+}, [tripsState]);
 
 
-// const [trips, settrips] = useState([]);
-// let allTrips = [];
-//   // await 
-//        firestore()
-//        .collection('trip')
-//        .onSnapshot(querySnapshot => {
-//          const trips = [];
- 
-//          querySnapshot.forEach(documentSnapshot => {
-//           trips.push({
-//             ...documentSnapshot.data(),
-//             docId: documentSnapshot.id,
-//           });
-//          });
-//          setState ? setState(trips) : null;
-//          allTrips = trips;
-//        });
-
-
-// firestore()
-//   .collection('sample_test')
-//   .doc('ABC2')
-//   .set({
-//     name: 'Tarun',
-//     age: '22',
-//   })
-//   .then(() => {
-//     console.log('User added!');
-//   });
-// console.log('p1');
-// const subscriber = firestore()
-  // .collection('user')
-  // .doc('+911234567890')
-  // .onSnapshot(documentSnapshot => {
-    // console.log('User data: ', documentSnapshot.data());
-  // });
-// console.log('p2');
-// console.log(subscriber);
-// console.log('p3');
-function getFormData(object) {
-  const formData = new FormData();
-  Object.keys(object).forEach(key => formData.append(key, object[key]));
-  return formData;
-}
-
-const justDoIt=async()=>{
-  await firestore()
-  .collection('trip')
-  .doc('3EdxW6UrrR7VxAGzDsMo')
-  .onSnapshot(documentSnapshot => {
-    console.log('1st trip data: ', documentSnapshot.data());
-  });
-  console.log("done");
+const justDoIt=()=>{
+  console.log("pressed:)",cards.length);
+  console.log(tripsState[0].itinerary);
+  // if(flag) return ;
+  let cnt=0;
+  // cards.map(async(x)=>{
+    cnt++;
+    const cur = {
+      type: "itinerary",
+      cardId: cnt,
+      shortDesc: ,
+      longDesc: ,
+      poc: ,
+      place: ,
+      price: ,
+      discount: ,
+      ratings: ,
+      videoUrl: ,
+      multiImageUrl: ,
+      title: ,
+    };
+  //   // console.log(cur);
+  //   firestore()
+  //     .collection("cards")
+  //     .doc(`${cnt}`)
+  //     .set(cur);
+  //   console.log("pushing");
+  // })
+  // console.log("ended");
+  flag=1;
  }
-const Separator = () => <View style={styles.separator} />;
 
-const App = () =>
-(
+
+return (
   <SafeAreaView style={styles.container}>
     {/* <searchingPage/> */}
     {/* </search> */}
@@ -87,7 +109,7 @@ const App = () =>
       />
     </View>
   </SafeAreaView>
-);
+)};
 
 const styles = StyleSheet.create({
   container: {
